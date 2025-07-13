@@ -1,0 +1,1 @@
+Practicing and explaning all concepts related to Java Script 
