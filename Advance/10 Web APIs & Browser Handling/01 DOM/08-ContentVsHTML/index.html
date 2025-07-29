@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Content vs HTML</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="contentBox">
+    Hello <span class="hidden">Hidden World</span> 🌍
+  </div>
+
+  <button onclick="logContent()">Show All Content Types</button>
+  <button onclick="updateContent()">Change with innerHTML</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
