@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IIFE Counter Demo</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    button { padding: 10px 20px; margin: 10px; }
+    .output { font-weight: bold; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h2>🔢 Counter using IIFE</h2>
+  <button onclick="increase()">+ Add</button>
+  <div class="output" id="result">0</div>
+
+  <script>
+    // ✅ Counter IIFE returns closure
+    const counter = (function () {
+      let count = 0;
+      return function () {
+        return ++count;
+      };
+    })();
+
+    function increase() {
+      const result = counter();
+      document.getElementById("result").textContent = result;
+    }
+  </script>
+</body>
+</html>

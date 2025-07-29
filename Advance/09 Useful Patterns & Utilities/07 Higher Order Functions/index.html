@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HOF Demo - Filter & Map</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input { padding: 10px; margin-bottom: 10px; width: 200px; }
+    .user { padding: 5px 0; }
+  </style>
+</head>
+<body>
+  <h2>🔍 Filter Users by Name (HOF)</h2>
+  <input type="text" placeholder="Search name..." oninput="filterUsers(this.value)" />
+  <div id="userList"></div>
+
+  <script>
+    const users = [
+      { name: "Anuj", age: 23 },
+      { name: "Ravi", age: 30 },
+      { name: "Priya", age: 27 },
+      { name: "Anusha", age: 25 }
+    ];
+
+    function display(data) {
+      document.getElementById("userList").innerHTML = data
+        .map(user => `<div class="user">👤 ${user.name} (${user.age} yrs)</div>`)
+        .join("");
+    }
+
+    function filterUsers(query) {
+      const result = users.filter(u => u.name.toLowerCase().includes(query.toLowerCase()));
+      display(result);
+    }
+
+    // Initial load
+    display(users);
+  </script>
+</body>
+</html>

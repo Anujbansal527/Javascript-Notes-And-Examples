@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Singleton - Dark Mode Toggle</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; transition: background 0.3s; }
+    .dark { background: #111; color: white; }
+    button { padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h2>🌓 Singleton Theme Controller</h2>
+  <button onclick="Theme().toggle()">Toggle Dark Mode</button>
+
+  <script>
+    const Theme = (function () {
+      let instance;
+
+      function createThemeController() {
+        let isDark = false;
+
+        return {
+          toggle: function () {
+            isDark = !isDark;
+            document.body.classList.toggle("dark", isDark);
+          },
+          getMode: () => (isDark ? "Dark" : "Light")
+        };
+      }
+
+      return function () {
+        if (!instance) instance = createThemeController();
+        return instance;
+      };
+    })();
+  </script>
+</body>
+</html>

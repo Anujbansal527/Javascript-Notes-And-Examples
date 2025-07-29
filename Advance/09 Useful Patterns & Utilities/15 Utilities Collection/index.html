@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JS Utility Functions</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input, button { padding: 10px; margin: 5px; }
+    .log { margin-top: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>🧰 JS Utilities Live Demo</h2>
+  <input id="emailInput" placeholder="Enter Email..." />
+  <button onclick="validateEmail()">Check Email</button>
+
+  <input id="textInput" placeholder="Text to Capitalize" />
+  <button onclick="showCapital()">Capitalize</button>
+
+  <div class="log" id="logBox"></div>
+
+  <script>
+    const Utils = {
+      capitalize: (str) => str.charAt(0).toUpperCase() + str.slice(1),
+      isEmail: (str) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str)
+    };
+
+    function validateEmail() {
+      const email = document.getElementById("emailInput").value;
+      const log = Utils.isEmail(email)
+        ? "✅ Valid Email"
+        : "❌ Invalid Email";
+      document.getElementById("logBox").innerText = log;
+    }
+
+    function showCapital() {
+      const txt = document.getElementById("textInput").value;
+      const cap = Utils.capitalize(txt);
+      document.getElementById("logBox").innerText = "🔤 Capitalized: " + cap;
+    }
+  </script>
+</body>
+</html>

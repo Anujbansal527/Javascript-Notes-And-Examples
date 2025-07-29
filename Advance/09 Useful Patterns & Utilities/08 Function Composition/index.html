@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Function Composition - Demo</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input, button { padding: 10px; font-size: 16px; margin: 5px; width: 100px; }
+    .output { font-weight: bold; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h2>🔗 Number Transformer (Compose Example)</h2>
+  <input type="number" id="inputNum" value="4" />
+  <button onclick="transform()">Transform</button>
+  <div class="output" id="result"></div>
+
+  <script>
+    const double = (x) => x * 2;
+    const square = (x) => x * x;
+    const subtractOne = (x) => x - 1;
+
+    const compose = (...fns) => (val) =>
+      fns.reduceRight((acc, fn) => fn(acc), val);
+
+    function transform() {
+      const num = parseInt(document.getElementById("inputNum").value);
+      const composed = compose(subtractOne, square, double);
+      const result = composed(num);
+      document.getElementById("result").textContent = `🔢 Output: ${result}`;
+    }
+  </script>
+</body>
+</html>

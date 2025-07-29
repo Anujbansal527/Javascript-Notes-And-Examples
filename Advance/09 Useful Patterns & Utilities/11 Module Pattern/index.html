@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JS Utilities - Module Pattern</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input { padding: 10px; margin-right: 10px; width: 250px; }
+    .output { margin-top: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>📬 Email Validator (Utils Module)</h2>
+  <input type="text" id="emailInput" placeholder="Enter your email..." />
+  <button onclick="validate()">Check Email</button>
+  <div class="output" id="result"></div>
+
+  <script>
+    const Utils = (function () {
+      const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+      return {
+        isEmail: (str) => emailRegex.test(str),
+        capitalize: (str) => str.charAt(0).toUpperCase() + str.slice(1)
+      };
+    })();
+
+    function validate() {
+      const email = document.getElementById("emailInput").value;
+      const isValid = Utils.isEmail(email);
+      document.getElementById("result").textContent = isValid
+        ? "✅ Valid Email"
+        : "❌ Invalid Email";
+    }
+  </script>
+</body>
+</html>

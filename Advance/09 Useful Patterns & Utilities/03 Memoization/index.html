@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Memoization Example</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input { padding: 0.5rem; font-size: 16px; width: 60px; }
+    button { padding: 0.5rem 1rem; margin-left: 10px; }
+    .output { margin-top: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>🔁 Memoized Fibonacci Calculator</h2>
+  <p>Enter a number (0–50):</p>
+  <input type="number" id="num" value="10" min="0" max="50" />
+  <button onclick="runFib()">Calculate</button>
+  <div class="output" id="output"></div>
+
+  <script>
+    // ✅ Memoization logic
+    function memoize(fn) {
+      const cache = {};
+      return function (...args) {
+        const key = args.join("-");
+        if (cache[key]) {
+          document.getElementById("output").style.color = "green";
+          return cache[key];
+        }
+        const result = fn.apply(this, args);
+        cache[key] = result;
+        document.getElementById("output").style.color = "black";
+        return result;
+      };
+    }
+
+    // 🧠 Recursive Fibonacci
+    const fib = memoize(function (n) {
+      if (n < 2) return n;
+      return fib(n - 1) + fib(n - 2);
+    });
+
+    function runFib() {
+      const n = parseInt(document.getElementById("num").value);
+      const output = fib(n);
+      document.getElementById("output").textContent = `🔢 Result: fib(${n}) = ${output}`;
+    }
+  </script>
+</body>
+</html>

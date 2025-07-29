@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Observer Pattern - Demo</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    button { padding: 8px 15px; margin: 10px; }
+    .log { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h2>📢 Notification Center (Observer Pattern)</h2>
+  <button onclick="subscribe()">Subscribe Logger</button>
+  <button onclick="unsubscribe()">Unsubscribe Logger</button>
+  <button onclick="sendNotification()">Send Notification</button>
+
+  <div class="log" id="logBox"></div>
+
+  <script>
+    class Subject {
+      constructor() {
+        this.observers = [];
+      }
+
+      subscribe(fn) {
+        this.observers.push(fn);
+        log("✅ Subscribed");
+      }
+
+      unsubscribe(fn) {
+        this.observers = this.observers.filter(sub => sub !== fn);
+        log("❌ Unsubscribed");
+      }
+
+      notify(data) {
+        this.observers.forEach(fn => fn(data));
+      }
+    }
+
+    const NotificationCenter = new Subject();
+
+    function logger(data) {
+      log("📨 Message: " + data);
+    }
+
+    function subscribe() {
+      NotificationCenter.subscribe(logger);
+    }
+
+    function unsubscribe() {
+      NotificationCenter.unsubscribe(logger);
+    }
+
+    function sendNotification() {
+      const message = "📬 New Message from Subject";
+      NotificationCenter.notify(message);
+    }
+
+    function log(msg) {
+      const logDiv = document.getElementById("logBox");
+      logDiv.innerHTML += `<div>${msg}</div>`;
+    }
+  </script>
+</body>
+</html>

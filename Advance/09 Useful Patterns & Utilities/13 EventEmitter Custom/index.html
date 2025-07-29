@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Custom EventEmitter Demo</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input, button { margin: 5px; padding: 8px; }
+    .log { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h2>📡 Custom EventEmitter (Pub/Sub)</h2>
+  <input id="msg" placeholder="Enter message" />
+  <button onclick="subscribe()">Subscribe</button>
+  <button onclick="unsubscribe()">Unsubscribe</button>
+  <button onclick="publish()">Emit Event</button>
+  <div class="log" id="logBox"></div>
+
+  <script>
+    class EventEmitter {
+      constructor() {
+        this.events = {};
+      }
+
+      on(event, cb) {
+        if (!this.events[event]) this.events[event] = [];
+        this.events[event].push(cb);
+      }
+
+      emit(event, data) {
+        if (this.events[event]) {
+          this.events[event].forEach(fn => fn(data));
+        }
+      }
+
+      off(event, cb) {
+        if (!this.events[event]) return;
+        this.events[event] = this.events[event].filter(fn => fn !== cb);
+      }
+    }
+
+    const emitter = new EventEmitter();
+
+    function logger(msg) {
+      const logBox = document.getElementById("logBox");
+      const div = document.createElement("div");
+      div.textContent = "📝 " + msg;
+      logBox.appendChild(div);
+    }
+
+    function subscribe() {
+      emitter.on("notify", logger);
+      logger("✅ Subscribed to notify");
+    }
+
+    function unsubscribe() {
+      emitter.off("notify", logger);
+      logger("❌ Unsubscribed from notify");
+    }
+
+    function publish() {
+      const message = document.getElementById("msg").value;
+      emitter.emit("notify", message || "🔔 Default Notification!");
+    }
+  </script>
+</body>
+</html>

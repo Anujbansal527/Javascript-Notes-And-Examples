@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Currying Demo</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input { padding: 8px; margin: 5px; width: 100px; }
+    button { padding: 8px 16px; }
+    .output { margin-top: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>💰 GST Calculator (Currying)</h2>
+  <label>GST Rate %:</label>
+  <input type="number" id="rate" value="18" />
+  <br />
+  <label>Amount ₹:</label>
+  <input type="number" id="amount" value="5000" />
+  <br />
+  <button onclick="calculate()">Calculate GST</button>
+
+  <div class="output" id="output"></div>
+
+  <script>
+    // ✅ Currying function
+    function calculateGST(rate) {
+      return function (amount) {
+        return ((rate / 100) * amount).toFixed(2);
+      };
+    }
+
+    function calculate() {
+      const rate = parseFloat(document.getElementById("rate").value);
+      const amount = parseFloat(document.getElementById("amount").value);
+      const gst = calculateGST(rate)(amount);
+
+      document.getElementById("output").textContent = `📊 GST: ₹${gst}`;
+    }
+  </script>
+</body>
+</html>

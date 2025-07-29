@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Factory Function Demo</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input, button { padding: 10px; margin: 5px; }
+    .output { margin-top: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>🏭 Create Users using Factory Function</h2>
+  <input type="text" id="nameInput" placeholder="Enter name" />
+  <input type="number" id="ageInput" placeholder="Enter age" />
+  <button onclick="createNewUser()">Create User</button>
+
+  <div class="output" id="userList"></div>
+
+  <script>
+    function createUser(name, age) {
+      return {
+        name,
+        age,
+        greet() {
+          return `👋 Hello ${this.name}, Age: ${this.age}`;
+        }
+      };
+    }
+
+    function createNewUser() {
+      const name = document.getElementById("nameInput").value;
+      const age = document.getElementById("ageInput").value;
+
+      if (!name || !age) return alert("⚠️ Please fill both fields!");
+
+      const user = createUser(name, Number(age));
+
+      const div = document.createElement("div");
+      div.textContent = user.greet();
+      document.getElementById("userList").appendChild(div);
+    }
+  </script>
+</body>
+</html>
