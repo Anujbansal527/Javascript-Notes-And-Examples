@@ -1,0 +1,23 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎤 Speech Recognition</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    #output { font-size: 1.2em; margin-top: 20px; }
+    button { padding: 10px 20px; margin: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>🎤 Voice to Text (Speech Recognition)</h2>
+
+  <button onclick="startListening()">🎙️ Start Listening</button>
+  <button onclick="stopListening()">🛑 Stop</button>
+
+  <p id="output">🗣️ Output: <span id="text">--</span></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
