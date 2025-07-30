@@ -1,0 +1,25 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Bubbling vs Capturing</title>
+  <style>
+    div { padding: 20px; border: 2px solid black; margin: 10px; }
+    button { padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <div id="outer">
+    Outer Div
+    <div id="middle">
+      Middle Div
+      <div id="inner">
+        Inner Div
+        <button id="btn">Click Me</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

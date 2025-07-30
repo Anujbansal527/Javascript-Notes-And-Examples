@@ -1,0 +1,23 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Handling</title>
+  <style>
+    form { width: 300px; margin: 30px auto; display: flex; flex-direction: column; gap: 10px; }
+    input, button { padding: 10px; }
+    .error { color: red; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <button type="submit">Submit</button>
+    <p class="error" id="errorBox"></p>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

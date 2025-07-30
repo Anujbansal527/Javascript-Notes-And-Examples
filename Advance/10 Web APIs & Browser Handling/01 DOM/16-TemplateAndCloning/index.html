@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Template and Cloning</title>
+  <style>
+    .card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin: 10px;
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="addCard">➕ Add Card</button>
+  <div id="container"></div>
+
+  <!-- 🔖 Hidden template block -->
+  <template id="card-template">
+    <div class="card">
+      <h3 class="card-title">Title</h3>
+      <p class="card-desc">Description</p>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
