@@ -1,6 +1,7 @@
- # ✅ JavaScript If-Else Ladder
+# ✅ JavaScript If-Else Ladder
 
-`If-else ladder` tab use hota hai jab multiple conditions ko sequentially check karna ho. Yeh almost `if...else if...else` ke jaisa hi hota hai — bas emphasis hota hai ek ke baad ek check karne par.
+`If-else ladder` tab use hota hai jab multiple conditions ko sequentially check karna ho.  
+Yeh almost `if...else if...else` ke jaisa hi hota hai — bas emphasis hota hai ek ke baad ek check karne par.
 
 ---
 
@@ -16,8 +17,13 @@ if (condition1) {
 } else {
   // Default block
 }
+```
 
-### 🔹 Flow Diagram:
+---
+
+## 🔹 Flow Diagram:
+
+```
 Start
   |
 Check condition1
@@ -31,8 +37,13 @@ Check condition2
 Check condition3
   ├─ True → Block3
   └─ False → Else Block
+```
 
-### 🔹 Example:
+---
+
+## 🔹 Example:
+
+```js
 let value = 15;
 
 if (value < 10) {
@@ -42,20 +53,28 @@ if (value < 10) {
 } else {
   console.log("20 or more");
 }
+```
 
-✅ Output: "Between 10 and 20"
-
-### 📌 Use Cases
-Menu options
-Complex validation conditions
-Multiple user levels / statuses
-
-### 🧠 Interview Insight
-### Q: Ladder vs Nested if: kya difference hai?
-**A**:
-Ladder = parallel independent checks
-Nested if = inner condition dependent on outer condition
+### ✅ Output:
+```
+"Between 10 and 20"
+```
 
 ---
 
-```js
+## 📌 Use Cases
+
+- Menu options  
+- Complex validation conditions  
+- Multiple user levels / statuses  
+
+---
+
+### 🧠 Interview Insight
+
+**Q: Ladder vs Nested if: kya difference hai?**  
+**A**:  
+- **Ladder** = Parallel independent checks  
+- **Nested if** = Inner condition dependent on outer condition  
+
+---
