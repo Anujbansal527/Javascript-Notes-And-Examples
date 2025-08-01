@@ -1,4 +1,4 @@
- # ✅ JavaScript If...Else If Statement
+# ✅ JavaScript If...Else If Statement
 
 Jab aapko ek se zyada **multiple conditions** check karni ho, tab `if...else if...else` ladder use karte hain.
 
@@ -14,9 +14,13 @@ if (condition1) {
 } else {
   // Run if none of the above conditions are true
 }
+```
 
+---
 
-### 🔹 Flow Diagram:
+## 🔹 Flow Diagram:
+
+```
 Start
   |
 Check Condition 1
@@ -28,8 +32,13 @@ Check Condition 2
 Else Block (default)
   ↓
  End
+```
 
-### 🔹 Example:
+---
+
+## 🔹 Example:
+
+```js
 let score = 75;
 
 if (score >= 90) {
@@ -39,21 +48,26 @@ if (score >= 90) {
 } else {
   console.log("Grade C");
 }
+```
 
-✅ Output: "Grade B"
-
-### 📌 Use Cases
-Marksheet grade system
-
-User role based access (admin, editor, viewer)
-
-Multiple route conditions
-
-### 🧠 Interview Insight
-### Q: How many else if can you use?
-**A**: Unlimited. But too many can reduce readability — prefer switch or object-based logic in complex cases.
+### ✅ Output:
+```
+"Grade B"
+```
 
 ---
 
+## 📌 Use Cases
 
-```js
+- Marksheet grade system  
+- User role based access (admin, editor, viewer)  
+- Multiple route conditions  
+
+---
+
+### 🧠 Interview Insight
+
+**Q: How many `else if` can you use?**  
+**A**: Unlimited. But too many can reduce readability — prefer `switch` or object-based logic in complex cases.
+
+---
