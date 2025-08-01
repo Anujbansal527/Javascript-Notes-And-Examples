@@ -8,44 +8,66 @@
 
 ```js
 let result = value ?? defaultValue;
+```
 
-### 🧠 Difference from || :
+---
 
-|| falsy values ko bhi replace karta hai (false, 0, '')
+### 🧠 Difference from `||`:
 
-?? sirf null ya undefined ke case me replace karta hai ✅
+- `||` falsy values ko bhi replace karta hai (`false`, `0`, `''`)
+- `??` sirf `null` ya `undefined` ke case me replace karta hai ✅
 
-### 🔹 Flow Diagram:
+---
+
+## 🔹 Flow Diagram:
+
+```
 Check value:
   |
   ├── If null or undefined → Use default
   └── Else → Use actual value
+```
 
-### 🔹 Example:
+---
+
+## 🔹 Example:
+
+```js
 let username = null;
 
 let displayName = username ?? "Guest";
 console.log(displayName); // ✅ Output: Guest
-
-### 📌 Use Cases
-API response defaulting
-Form fallback values
-Preventing null crashes
-
-### 🧠 Interview Insight
-### Q: ?? vs || me kya difference hai?
-**A**:
-|| check karta hai falsy values: false, 0, "", NaN, null, undefined
-?? sirf null ya undefined ke liye fallback deta hai
-
-let name = "";
-
-// || => fallback lega
-console.log(name || "Default"); // Output: Default
-
-// ?? => fallback nahi lega
-console.log(name ?? "Default"); // Output: ""
+```
 
 ---
 
+## 📌 Use Cases
+
+- API response defaulting  
+- Form fallback values  
+- Preventing null crashes  
+
+---
+
+### 🧠 Interview Insight
+
+**Q: `??` vs `||` me kya difference hai?**  
+**A**:
+
 ```js
+let name = "";
+```
+
+- `||` check karta hai **falsy values**: `false`, `0`, `""`, `NaN`, `null`, `undefined`
+
+```js
+console.log(name || "Default"); // Output: Default
+```
+
+- `??` sirf **null ya undefined** ke liye fallback deta hai
+
+```js
+console.log(name ?? "Default"); // Output: ""
+```
+
+---
