@@ -6,11 +6,10 @@ Loop likhte time beginners aur experienced dono se kuch common galtiyan hoti hai
 
 ## 🧠 1. ❌ Infinite Loops
 
-### Problem:
+### ❌ Problem:
 Exit condition galat ya missing hai → loop kabhi rukta hi nahi.
 
 ```js
-// ❌ Infinite
 let i = 0;
 while (i >= 0) {
   console.log(i); // kabhi rukega nahi
@@ -44,7 +43,7 @@ Add `i++` or similar.
 
 ---
 
-## 🧠 3. ❌ Misusing `continue` (skipping important logic)
+## 🧠 3. ❌ Misusing `continue` (Skipping Important Logic)
 
 ```js
 for (let i = 1; i <= 5; i++) {
@@ -79,7 +78,7 @@ for (let num of nums) {
 
 ---
 
-## 🧠 5. ❌ Using `break` incorrectly in nested loops
+## 🧠 5. ❌ Using `break` Incorrectly in Nested Loops
 
 ```js
 for (let i = 1; i <= 3; i++) {
@@ -105,13 +104,12 @@ outer: for (let i = 1; i <= 3; i++) {
 
 ---
 
-## 🧠 6. ❌ Wrong loop boundary
+## 🧠 6. ❌ Wrong Loop Boundary
 
 ```js
 const arr = [10, 20, 30];
-// ❌ runs one extra time
 for (let i = 0; i <= arr.length; i++) {
-  console.log(arr[i]); // arr[3] is undefined
+  console.log(arr[i]); // ❌ arr[3] is undefined
 }
 ```
 
@@ -124,7 +122,7 @@ for (let i = 0; i < arr.length; i++) {
 
 ---
 
-## 🧠 7. ❌ Modifying array inside `forEach`
+## 🧠 7. ❌ Modifying Array Inside `forEach`
 
 ```js
 let nums = [1, 2, 3];
@@ -138,12 +136,11 @@ Never mutate array inside `forEach`. Use `map`, or clone array first.
 
 ---
 
-## 🧠 8. ❌ Confusing `forEach` with async/await
+## 🧠 8. ❌ Confusing `forEach` with Async/Await
 
 ```js
-// ❌ await will not pause inside forEach
 arr.forEach(async (item) => {
-  await delay(); // doesn't wait
+  await delay(); // ❌ doesn't wait
 });
 ```
 
@@ -175,12 +172,15 @@ Use different variable names or scopes.
 
 ## 🔚 Summary Table:
 
-| Mistake                             | Solution                                |
-|-------------------------------------|------------------------------------------|
-| Infinite loop                       | Correct exit condition                   |
-| Missing increment/decrement         | Always update loop variable              |
-| Wrong loop type (`for...in`)        | Use `for`, `for...of` for arrays         |
-| Misusing `continue`/`break`         | Know what it skips or stops              |
-| `forEach` with async/await          | Use `for...of` instead                   |
+| Mistake                              | ✅ Solution                              |
+|--------------------------------------|------------------------------------------|
+| Infinite loop                        | Correct exit condition                   |
+| Missing increment/decrement          | Always update loop variable              |
+| Wrong loop type (`for...in`)         | Use `for`, `for...of` for arrays         |
+| Misusing `continue` / `break`        | Know what it skips or stops              |
+| `forEach` with async/await           | Use `for...of` instead                   |
 | Loop boundary error (`i <= arr.len`) | Use `<`, not `<=`                        |
-| Modifying array inside loop         | Avoid direct mutation during iteration   |
+| Modifying array inside loop          | Avoid direct mutation during iteration   |
+| Variable shadowing in loops          | Use unique variable names                |
+
+---
