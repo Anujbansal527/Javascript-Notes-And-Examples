@@ -148,11 +148,3 @@ let hindi = "नमस्ते";
 - ✅ Use regex wisely for validation & pattern matching
 
 ---
-
-Would you like the `basics/` and `methods/` folders filled with structured topics next? I can generate:
-
-- Full list of files for each section  
-- Real code examples inside  
-- Interview-style exercises inside `/interview/`
-
-Let me know how you'd like to proceed 🚀
