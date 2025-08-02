@@ -1,4 +1,4 @@
- # ✅ JavaScript If...Else Statement
+# ✅ JavaScript If...Else Statement
 
 Jab aapko koi condition ke basis pe **do possible blocks** run karne ho — ek jab condition true ho aur ek jab false ho — tab `if...else` use hota hai.
 
@@ -12,10 +12,13 @@ if (condition) {
 } else {
   // false: ye block chalega
 }
+```
 
+---
 
-### 🔹 Flow Diagram:
+## 🔹 Flow Diagram:
 
+```
 Start
   |
 Check Condition
@@ -23,10 +26,13 @@ Check Condition
   |---- False --> Run ELSE Block
   ↓
  End
+```
 
+---
 
-### 🔹 Example:
+## 🔹 Example:
 
+```js
 let marks = 45;
 
 if (marks >= 50) {
@@ -34,18 +40,26 @@ if (marks >= 50) {
 } else {
   console.log("Fail");
 }
+```
 
-✅ Output: "Fail" (kyunki 45 < 50)
-
-### 📌 Use Cases
-Login successful ya failed
-User is admin or normal user
-Form field empty or filled
-
-### 🧠 Interview Insight
-### Q: Can we nest if...else inside each other?
-**A**: Haan. Nested if...else use kar sakte ho jab condition ke andar aur bhi condition check karni ho.
+### ✅ Output:
+```
+"Fail" (kyunki 45 < 50)
+```
 
 ---
 
-```js
+## 📌 Use Cases
+
+- Login successful ya failed  
+- User is admin or normal user  
+- Form field empty or filled  
+
+---
+
+### 🧠 Interview Insight
+
+**Q: Can we nest if...else inside each other?**  
+**A**: Haan. Nested if...else use kar sakte ho jab condition ke andar aur bhi condition check karni ho.
+
+---

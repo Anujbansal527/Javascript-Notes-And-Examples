@@ -14,8 +14,8 @@ JavaScript doesn’t support `goto`, and for good reasons. Let’s explore why s
 | ✅ Readability     | Easy to understand, follow and debug             | Hard to follow logic due to jumps                  |
 | ✅ Scoping         | Maintains block/function scope                   | Breaks scope rules                                 |
 | ✅ Reusability     | Can be used with conditions, breaks, continues   | No clean way to combine with reusable logic        |
-| ❌ JS Support      | Fully supported (`for`, `while`, etc.)           | **Not supported in JavaScript**                   |
-| ❗ Risk             | Minimal (if used correctly)                      | High (spaghetti code, bugs)                        |
+| ❌ JS Support      | Fully supported (`for`, `while`, etc.)           | **Not supported in JavaScript**                    |
+| ❗ Risk            | Minimal (if used correctly)                      | High (spaghetti code, bugs)                        |
 | 🚫 Error-Prone     | Less prone to logic errors                       | More prone to logical confusion & bugs             |
 
 ---
