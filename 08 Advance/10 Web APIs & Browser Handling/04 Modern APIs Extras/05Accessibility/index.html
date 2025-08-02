@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accessibility Demo ♿</title>
+</head>
+<body>
+
+  <h2>♿ Accessibility (A11Y) Demo</h2>
+
+  <!-- Accessible Form -->
+  <form>
+    <label for="name">👤 Name:</label>
+    <input type="text" id="name" name="name" aria-required="true" /><br><br>
+
+    <label for="email">📧 Email:</label>
+    <input type="email" id="email" name="email" /><br><br>
+
+    <button type="submit">✅ Submit</button>
+  </form>
+
+  <br><hr><br>
+
+  <!-- Button with ARIA Label -->
+  <button aria-label="Open Help Section">❓ Help</button>
+
+  <!-- Hidden visually but accessible to screen reader -->
+  <div style="position: absolute; left: -9999px;" id="sr-message">
+    Screen reader only: Welcome to Accessibility Demo!
+  </div>
+
+  <!-- Live Region -->
+  <p role="alert" id="alert-msg"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
