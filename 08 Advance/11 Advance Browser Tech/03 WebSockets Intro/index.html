@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🔌 WebSocket Echo Chat</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background: #f0f0f0;
+    }
+    #output {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid #ccc;
+      height: 150px;
+      overflow-y: auto;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>💬 WebSocket Echo Chat</h1>
+
+  <input type="text" id="message" placeholder="Type message..." />
+  <button id="sendBtn">Send</button>
+
+  <div id="output">📡 Waiting for connection...</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
